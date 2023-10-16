@@ -8,7 +8,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-    //TODO: (fix) isUserInteractionEnabled is not a best practice 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .systemRed
@@ -25,7 +24,6 @@ class ViewController: UIViewController {
         var items: [LargeListItemView] = []
         for x in 0..<3 {
             let iv = LargeListItemView()
-            iv.isUserInteractionEnabled = false
             items.append(iv)
         }
         return items
@@ -35,7 +33,6 @@ class ViewController: UIViewController {
         var items: [SmallListItemView] = []
         for x in 0..<3 {
             let iv = SmallListItemView()
-            iv.isUserInteractionEnabled = false
             items.append(iv)
         }
         return items
@@ -43,13 +40,11 @@ class ViewController: UIViewController {
     
     private let sampleHeader1: ListHeaderView = {
         let sampleHeader = ListHeaderView()
-        sampleHeader.isUserInteractionEnabled = false
         return sampleHeader
     }()
     
     private let sampleHeader2: ListHeaderView = {
         let sampleHeader = ListHeaderView()
-        sampleHeader.isUserInteractionEnabled = false
         return sampleHeader
     }()
     
@@ -85,14 +80,14 @@ class ViewController: UIViewController {
             contentView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor),
         ])
         
-        self.view.addSubview(sampleHeader1)
-        self.view.addSubview(sampleLargeItems[0])
-        self.view.addSubview(sampleLargeItems[1])
-        self.view.addSubview(sampleLargeItems[2])
-        self.view.addSubview(sampleHeader2)
-        self.view.addSubview(sampleSmallItems[0])
-        self.view.addSubview(sampleSmallItems[1])
-        self.view.addSubview(sampleSmallItems[2])
+        self.contentView.addSubview(sampleHeader1)
+        self.contentView.addSubview(sampleLargeItems[0])
+        self.contentView.addSubview(sampleLargeItems[1])
+        self.contentView.addSubview(sampleLargeItems[2])
+        self.contentView.addSubview(sampleHeader2)
+        self.contentView.addSubview(sampleSmallItems[0])
+        self.contentView.addSubview(sampleSmallItems[1])
+        self.contentView.addSubview(sampleSmallItems[2])
         
         sampleHeader1.translatesAutoresizingMaskIntoConstraints = false
         sampleLargeItems[0].translatesAutoresizingMaskIntoConstraints = false
