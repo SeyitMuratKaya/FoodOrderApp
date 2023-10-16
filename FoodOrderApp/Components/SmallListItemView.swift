@@ -20,26 +20,40 @@ class SmallListItemView: UIView {
     private let restaurantLabel: UILabel = {
         let restaurantLabel = UILabel()
         restaurantLabel.text = "Cafe de Noir"
-        restaurantLabel.font = UIFont.systemFont(ofSize: 16)
+        restaurantLabel.font = UIFont.boldSystemFont(ofSize: 16)
         
         restaurantLabel.textColor = UIColor(red: 0.29, green: 0.294, blue: 0.302, alpha: 1)
         return restaurantLabel
     }()
     
-    private let placeholderRating: UILabel = {
-        let placeholderRating = UILabel()
-        placeholderRating.text = "4.9 (124) ratings"
-        placeholderRating.font = UIFont.systemFont(ofSize: 12)
-        placeholderRating.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
-        return placeholderRating
+//    private let placeholderRating: UILabel = {
+//        let placeholderRating = UILabel()
+//        placeholderRating.text = "4.9 (124) ratings"
+//        placeholderRating.font = UIFont.systemFont(ofSize: 12)
+//        placeholderRating.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
+//        return placeholderRating
+//    }()
+//    
+//    private let placeholderCafeType: UILabel = {
+//        let placeholderCafeType = UILabel()
+//        placeholderCafeType.text = "Cafe - Western Food"
+//        placeholderCafeType.font = UIFont.systemFont(ofSize: 12)
+//        placeholderCafeType.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
+//        return placeholderCafeType
+//    }()
+    
+    private let cafeRating: CafeRatingView = {
+        let cafeRating = CafeRatingView()
+        cafeRating.rating = 4.9
+        cafeRating.totalRating = 124
+        return cafeRating
     }()
     
-    private let placeholderCafeType: UILabel = {
-        let placeholderCafeType = UILabel()
-        placeholderCafeType.text = "Cafe - Western Food"
-        placeholderCafeType.font = UIFont.systemFont(ofSize: 12)
-        placeholderCafeType.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
-        return placeholderCafeType
+    private let cafeType: CafeTypeView = {
+        let cafeType = CafeTypeView()
+        cafeType.restaurantType = "Cafe"
+        cafeType.foodType = "Western Food"
+        return cafeType
     }()
     
     private let HStackView: UIStackView = {
@@ -80,11 +94,18 @@ class SmallListItemView: UIView {
         VStackView.addArrangedSubview(restaurantLabel)
         restaurantLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        VStackView.addArrangedSubview(placeholderCafeType)
-        placeholderCafeType.translatesAutoresizingMaskIntoConstraints = false
+//        VStackView.addArrangedSubview(placeholderCafeType)
+//        placeholderCafeType.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        VStackView.addArrangedSubview(placeholderRating)
+//        placeholderRating.translatesAutoresizingMaskIntoConstraints = false
+
+        VStackView.addArrangedSubview(cafeType)
+        cafeType.translatesAutoresizingMaskIntoConstraints = false
         
-        VStackView.addArrangedSubview(placeholderRating)
-        placeholderRating.translatesAutoresizingMaskIntoConstraints = false
+        VStackView.addArrangedSubview(cafeRating)
+        cafeType.translatesAutoresizingMaskIntoConstraints = false
+        
         
         HStackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         HStackView.isLayoutMarginsRelativeArrangement = true

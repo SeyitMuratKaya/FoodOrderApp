@@ -29,6 +29,7 @@ class CafeRatingView: UIView {
         let starImage = UIImageView()
         let config = UIImage.SymbolConfiguration(pointSize: 14)
         starImage.image = UIImage(systemName: "star.fill",withConfiguration: config)
+        starImage.contentMode = .scaleAspectFit
         starImage.tintColor = UIColor(red: 0.988, green: 0.376, blue: 0.067, alpha: 1)
         return starImage
     }()
