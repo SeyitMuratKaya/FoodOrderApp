@@ -76,6 +76,7 @@ class CafeRatingView: UIView {
             ratingPoint.centerYAnchor.constraint(equalTo: starImage.centerYAnchor),
             
             ratingCount.leadingAnchor.constraint(equalTo: ratingPoint.trailingAnchor, constant: 4),
+            ratingCount.centerYAnchor.constraint(equalTo: ratingPoint.centerYAnchor)
         ])
     }
 }

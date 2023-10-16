@@ -20,7 +20,8 @@ class LargeListItemView: UIView {
     private let HStackView: UIStackView = {
         let HStackView = UIStackView()
         HStackView.axis = .horizontal
-        HStackView.alignment = .leading
+        HStackView.alignment = .center
+        HStackView.distribution = .fillProportionally
         return HStackView
     }()
     
@@ -69,6 +70,13 @@ class LargeListItemView: UIView {
         return cafeRating
     }()
     
+    private let cafeType: CafeTypeView = {
+        let cafeType = CafeTypeView()
+        cafeType.restaurantType = "Cafe"
+        cafeType.foodType = "Western Food"
+        return cafeType
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -95,13 +103,11 @@ class LargeListItemView: UIView {
         self.innerVStackView.addArrangedSubview(HStackView)
         HStackView.translatesAutoresizingMaskIntoConstraints = false
         
-//        self.HStackView.addArrangedSubview(placeholderRating)
-//        placeholderRating.translatesAutoresizingMaskIntoConstraints = false
-//        
-//        self.HStackView.addArrangedSubview(placeholderCafeType)
-//        placeholderCafeType.translatesAutoresizingMaskIntoConstraints = false
         self.HStackView.addArrangedSubview(cafeRating)
         cafeRating.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.HStackView.addArrangedSubview(cafeType)
+        cafeType.translatesAutoresizingMaskIntoConstraints = false
         
         innerVStackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         innerVStackView.isLayoutMarginsRelativeArrangement = true
