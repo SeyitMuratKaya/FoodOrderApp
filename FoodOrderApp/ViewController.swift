@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     
     private let contentView: UIView = {
         let contentView = UIView()
-        contentView.backgroundColor = .systemPurple
+        contentView.backgroundColor = .white
         return contentView
     }()
     
@@ -30,6 +30,11 @@ class ViewController: UIViewController {
             imageViews.append(iv)
         }
         return imageViews
+    }()
+    
+    private let sampleHeader: ListHeaderView = {
+        let sampleHeader = ListHeaderView()
+        return sampleHeader
     }()
         
     override func viewDidLoad() {
@@ -69,6 +74,7 @@ class ViewController: UIViewController {
         self.view.addSubview(imageViews[2])
         self.view.addSubview(imageViews[3])
         self.view.addSubview(imageViews[4])
+        self.view.addSubview(sampleHeader)
         
         imageViews[0].translatesAutoresizingMaskIntoConstraints = false
         imageViews[1].translatesAutoresizingMaskIntoConstraints = false
@@ -76,9 +82,17 @@ class ViewController: UIViewController {
         imageViews[3].translatesAutoresizingMaskIntoConstraints = false
         imageViews[4].translatesAutoresizingMaskIntoConstraints = false
         
+        sampleHeader.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            imageViews[0].topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            
+            sampleHeader.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            sampleHeader.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            sampleHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            //sampleHeader.heightAnchor.constraint(equalToConstant: 300),
+            sampleHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            
+            imageViews[0].topAnchor.constraint(equalTo: self.sampleHeader.bottomAnchor),
             imageViews[0].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             imageViews[0].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             imageViews[0].heightAnchor.constraint(equalToConstant: 300),
