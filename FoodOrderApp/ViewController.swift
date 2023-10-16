@@ -8,6 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //TODO: (fix) isUserInteractionEnabled is not a best practice 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .systemRed
@@ -20,23 +21,28 @@ class ViewController: UIViewController {
         return contentView
     }()
     
-    private let imageViews: [UIImageView] = {
-        var imageViews: [UIImageView] = []
-        for x in 1...5 {
-            let iv = UIImageView()
-            iv.contentMode = .scaleAspectFill
-            iv.image = UIImage(named: "largeItem1" )
-            iv.clipsToBounds = true
-            imageViews.append(iv)
+    private let sampleLargeItems: [LargeListItemView] = {
+        var items: [LargeListItemView] = []
+        for x in 0..<3 {
+            let iv = LargeListItemView()
+            iv.isUserInteractionEnabled = false
+            items.append(iv)
         }
-        return imageViews
+        return items
     }()
     
-    private let sampleHeader: ListHeaderView = {
+    private let sampleHeader1: ListHeaderView = {
         let sampleHeader = ListHeaderView()
+        sampleHeader.isUserInteractionEnabled = false
         return sampleHeader
     }()
-        
+    
+    private let sampleHeader2: ListHeaderView = {
+        let sampleHeader = ListHeaderView()
+        sampleHeader.isUserInteractionEnabled = false
+        return sampleHeader
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupUI()
@@ -69,60 +75,52 @@ class ViewController: UIViewController {
             contentView.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor),
         ])
         
-        self.view.addSubview(imageViews[0])
-        self.view.addSubview(imageViews[1])
-        self.view.addSubview(imageViews[2])
-        self.view.addSubview(imageViews[3])
-        self.view.addSubview(imageViews[4])
-        self.view.addSubview(sampleHeader)
+        self.view.addSubview(sampleHeader1)
+        self.view.addSubview(sampleLargeItems[0])
+        self.view.addSubview(sampleLargeItems[1])
+        self.view.addSubview(sampleLargeItems[2])
+        self.view.addSubview(sampleHeader2)
         
-        imageViews[0].translatesAutoresizingMaskIntoConstraints = false
-        imageViews[1].translatesAutoresizingMaskIntoConstraints = false
-        imageViews[2].translatesAutoresizingMaskIntoConstraints = false
-        imageViews[3].translatesAutoresizingMaskIntoConstraints = false
-        imageViews[4].translatesAutoresizingMaskIntoConstraints = false
+        sampleLargeItems[0].translatesAutoresizingMaskIntoConstraints = false
+        sampleLargeItems[1].translatesAutoresizingMaskIntoConstraints = false
+        sampleLargeItems[2].translatesAutoresizingMaskIntoConstraints = false
         
-        sampleHeader.translatesAutoresizingMaskIntoConstraints = false
+        sampleHeader1.translatesAutoresizingMaskIntoConstraints = false
+        sampleHeader2.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
-            sampleHeader.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            sampleHeader.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            sampleHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            //sampleHeader.heightAnchor.constraint(equalToConstant: 300),
-            sampleHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            sampleHeader1.topAnchor.constraint(equalTo: self.contentView.topAnchor),
+            sampleHeader1.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            sampleHeader1.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            //sampleHeader1.heightAnchor.constraint(equalToConstant: 300),
+            sampleHeader1.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            imageViews[0].topAnchor.constraint(equalTo: self.sampleHeader.bottomAnchor),
-            imageViews[0].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            imageViews[0].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            imageViews[0].heightAnchor.constraint(equalToConstant: 300),
-            imageViews[0].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            sampleLargeItems[0].topAnchor.constraint(equalTo: self.sampleHeader1.bottomAnchor),
+            sampleLargeItems[0].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            sampleLargeItems[0].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            sampleLargeItems[0].heightAnchor.constraint(equalToConstant: 300),
+            sampleLargeItems[0].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            imageViews[1].topAnchor.constraint(equalTo: self.imageViews[0].bottomAnchor),
-            imageViews[1].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            imageViews[1].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            imageViews[1].heightAnchor.constraint(equalToConstant: 300),
-            imageViews[1].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            sampleLargeItems[1].topAnchor.constraint(equalTo: self.sampleLargeItems[0].bottomAnchor),
+            sampleLargeItems[1].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            sampleLargeItems[1].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            sampleLargeItems[1].heightAnchor.constraint(equalToConstant: 300),
+            sampleLargeItems[1].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            imageViews[2].topAnchor.constraint(equalTo: self.imageViews[1].bottomAnchor),
-            imageViews[2].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            imageViews[2].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            imageViews[2].heightAnchor.constraint(equalToConstant: 300),
-            imageViews[2].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            sampleLargeItems[2].topAnchor.constraint(equalTo: self.sampleLargeItems[1].bottomAnchor),
+            sampleLargeItems[2].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            sampleLargeItems[2].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            sampleLargeItems[2].heightAnchor.constraint(equalToConstant: 300),
+            sampleLargeItems[2].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            imageViews[3].topAnchor.constraint(equalTo: self.imageViews[2].bottomAnchor),
-            imageViews[3].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            imageViews[3].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            imageViews[3].heightAnchor.constraint(equalToConstant: 300),
-            imageViews[3].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-            
-            imageViews[4].topAnchor.constraint(equalTo: self.imageViews[3].bottomAnchor),
-            imageViews[4].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            imageViews[4].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            imageViews[4].heightAnchor.constraint(equalToConstant: 300),
-            imageViews[4].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-            
-            imageViews[4].bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            sampleHeader2.topAnchor.constraint(equalTo: self.sampleLargeItems[2].bottomAnchor),
+            sampleHeader2.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            sampleHeader2.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            //sampleHeader2.heightAnchor.constraint(equalToConstant: 300),
+            sampleHeader2.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+//            
+            sampleHeader2.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
         ])
     }
 }
