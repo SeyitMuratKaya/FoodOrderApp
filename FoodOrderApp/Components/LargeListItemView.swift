@@ -46,20 +46,27 @@ class LargeListItemView: UIView {
         return restaurantLabel
     }()
     
-    private let placeholderRating: UILabel = {
-        let placeholderRating = UILabel()
-        placeholderRating.text = "4.9 (124) ratings"
-        placeholderRating.font = UIFont.systemFont(ofSize: 12)
-        placeholderRating.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
-        return placeholderRating
-    }()
+//    private let placeholderRating: UILabel = {
+//        let placeholderRating = UILabel()
+//        placeholderRating.text = "4.9 (124) ratings"
+//        placeholderRating.font = UIFont.systemFont(ofSize: 12)
+//        placeholderRating.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
+//        return placeholderRating
+//    }()
+//    
+//    private let placeholderCafeType: UILabel = {
+//        let placeholderCafeType = UILabel()
+//        placeholderCafeType.text = "Cafe - Western Food"
+//        placeholderCafeType.font = UIFont.systemFont(ofSize: 12)
+//        placeholderCafeType.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
+//        return placeholderCafeType
+//    }()
     
-    private let placeholderCafeType: UILabel = {
-        let placeholderCafeType = UILabel()
-        placeholderCafeType.text = "Cafe - Western Food"
-        placeholderCafeType.font = UIFont.systemFont(ofSize: 12)
-        placeholderCafeType.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
-        return placeholderCafeType
+    private let cafeRating: CafeRatingView = {
+        let cafeRating = CafeRatingView()
+        cafeRating.rating = 4.9
+        cafeRating.totalRating = 124
+        return cafeRating
     }()
     
     override init(frame: CGRect) {
@@ -88,11 +95,13 @@ class LargeListItemView: UIView {
         self.innerVStackView.addArrangedSubview(HStackView)
         HStackView.translatesAutoresizingMaskIntoConstraints = false
         
-        self.HStackView.addArrangedSubview(placeholderRating)
-        placeholderRating.translatesAutoresizingMaskIntoConstraints = false
-        
-        self.HStackView.addArrangedSubview(placeholderCafeType)
-        placeholderCafeType.translatesAutoresizingMaskIntoConstraints = false
+//        self.HStackView.addArrangedSubview(placeholderRating)
+//        placeholderRating.translatesAutoresizingMaskIntoConstraints = false
+//        
+//        self.HStackView.addArrangedSubview(placeholderCafeType)
+//        placeholderCafeType.translatesAutoresizingMaskIntoConstraints = false
+        self.HStackView.addArrangedSubview(cafeRating)
+        cafeRating.translatesAutoresizingMaskIntoConstraints = false
         
         innerVStackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         innerVStackView.isLayoutMarginsRelativeArrangement = true
