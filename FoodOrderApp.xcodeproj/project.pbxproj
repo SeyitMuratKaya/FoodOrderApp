@@ -58,6 +58,7 @@
 		2FD3EEDA2ADD5F1E0042D1C9 /* FoodOrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				2FD3EEF02ADD7E050042D1C9 /* Components */,
 				2FD3EEDB2ADD5F1E0042D1C9 /* AppDelegate.swift */,
 				2FD3EEDD2ADD5F1E0042D1C9 /* SceneDelegate.swift */,
 				2FD3EEDF2ADD5F1E0042D1C9 /* ViewController.swift */,
@@ -67,6 +68,13 @@
 				2FD3EEE92ADD5F200042D1C9 /* Info.plist */,
 			);
 			path = FoodOrderApp;
+			sourceTree = "<group>";
+		};
+		2FD3EEF02ADD7E050042D1C9 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
