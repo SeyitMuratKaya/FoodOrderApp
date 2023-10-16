@@ -41,7 +41,7 @@ class LargeListItemView: UIView {
     private let restaurantLabel: UILabel = {
         let restaurantLabel = UILabel()
         restaurantLabel.text = "Cafe de Noir"
-        restaurantLabel.font = UIFont.systemFont(ofSize: 16)
+        restaurantLabel.font = UIFont.boldSystemFont(ofSize: 16)
         restaurantLabel.textColor = UIColor(red: 0.29, green: 0.294, blue: 0.302, alpha: 1)
         return restaurantLabel
     }()

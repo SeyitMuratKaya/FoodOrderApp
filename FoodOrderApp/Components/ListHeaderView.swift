@@ -12,7 +12,7 @@ class ListHeaderView: UIView {
     private let headerText: UILabel = {
         let headerText = UILabel()
         headerText.text = "Popular Restaurants"
-        headerText.font = UIFont.systemFont(ofSize: 20)
+        headerText.font = UIFont.boldSystemFont(ofSize: 20)
         headerText.textColor = UIColor(red: 0.29, green: 0.294, blue: 0.302, alpha: 1)
         return headerText
     }()
@@ -52,7 +52,7 @@ class ListHeaderView: UIView {
         
         self.stackView.addArrangedSubview(navigationText)
         navigationText.translatesAutoresizingMaskIntoConstraints = false
-        stackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        stackView.layoutMargins = UIEdgeInsets(top: 32, left: 16, bottom: 32, right: 16)
         stackView.isLayoutMarginsRelativeArrangement = true
         
         NSLayoutConstraint.activate([
