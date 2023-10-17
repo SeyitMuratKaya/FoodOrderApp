@@ -75,20 +75,22 @@ class ViewController: UIViewController {
     
     private let sampleLargeItems: [LargeListItemView] = {
         var items: [LargeListItemView] = []
-        for x in 0..<3 {
-            let iv = LargeListItemView()
-            iv.translatesAutoresizingMaskIntoConstraints = false
-            items.append(iv)
+        for i in 1...3 {
+            let imageView = LargeListItemView()
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.image = UIImage(named: "largeItem\(i)")
+            items.append(imageView)
         }
         return items
     }()
     
     private let sampleSmallItems: [SmallListItemView] = {
         var items: [SmallListItemView] = []
-        for x in 0..<3 {
-            let iv = SmallListItemView()
-            iv.translatesAutoresizingMaskIntoConstraints = false
-            items.append(iv)
+        for i in 1...3 {
+            let imageView = SmallListItemView()
+            imageView.translatesAutoresizingMaskIntoConstraints = false
+            imageView.image = UIImage(named: "smallItem\(i)")
+            items.append(imageView)
         }
         return items
     }()

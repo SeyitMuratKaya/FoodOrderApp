@@ -9,6 +9,14 @@ import UIKit
 
 class SmallListItemView: UIView {
     
+    public var image: UIImage? {
+        didSet {
+            if let image {
+                imageView.image = image
+            }
+        }
+    }
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "smallItem1")
