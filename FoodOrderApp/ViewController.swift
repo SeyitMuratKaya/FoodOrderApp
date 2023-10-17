@@ -8,6 +8,24 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private lazy var collectionViewLayout: UICollectionViewLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 8
+        layout.scrollDirection = .horizontal
+        return layout
+    }()
+    
+    private lazy var foodCategoryCollectionView: UICollectionView = {
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.showsHorizontalScrollIndicator = false
+        collectionView.isUserInteractionEnabled = true
+        collectionView.isScrollEnabled = true
+        collectionView.backgroundColor = .systemBlue
+        return collectionView
+    }()
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .systemRed
@@ -55,6 +73,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        foodCategoryCollectionView.delegate = self
+        foodCategoryCollectionView.dataSource = self
+        foodCategoryCollectionView.register(StoryCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         self.setupUI()
     }
     
@@ -86,6 +107,7 @@ class ViewController: UIViewController {
         ])
         
         self.contentView.addSubview(welcomeHeader)
+        self.contentView.addSubview(foodCategoryCollectionView)
         self.contentView.addSubview(sampleHeader1)
         self.contentView.addSubview(sampleLargeItems[0])
         self.contentView.addSubview(sampleLargeItems[1])
@@ -113,7 +135,13 @@ class ViewController: UIViewController {
             welcomeHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             welcomeHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            sampleHeader1.topAnchor.constraint(equalTo: self.welcomeHeader.bottomAnchor),
+            foodCategoryCollectionView.topAnchor.constraint(equalTo: self.welcomeHeader.bottomAnchor),
+            foodCategoryCollectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            foodCategoryCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            foodCategoryCollectionView.heightAnchor.constraint(equalToConstant: 90),
+//            foodCategoryCollectionView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            
+            sampleHeader1.topAnchor.constraint(equalTo: self.foodCategoryCollectionView.bottomAnchor),
             sampleHeader1.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             sampleHeader1.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             sampleHeader1.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
@@ -161,3 +189,13 @@ class ViewController: UIViewController {
     }
 }
 
+extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? StoryCollectionViewCell else {return UICollectionViewCell()}
+        cell.setup()
+        return cell    }
+}
