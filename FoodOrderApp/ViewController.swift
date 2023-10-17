@@ -43,18 +43,21 @@ class ViewController: UIViewController {
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.backgroundColor = .systemRed
         return scrollView
     }()
     
     private let contentView: UIView = {
         let contentView = UIView()
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         contentView.backgroundColor = .white
         return contentView
     }()
     
     private let welcomeHeader: WelcomeHeaderView = {
         let welcomeHeader = WelcomeHeaderView()
+        welcomeHeader.translatesAutoresizingMaskIntoConstraints = false
         return welcomeHeader
     }()
     
@@ -74,6 +77,7 @@ class ViewController: UIViewController {
         var items: [LargeListItemView] = []
         for x in 0..<3 {
             let iv = LargeListItemView()
+            iv.translatesAutoresizingMaskIntoConstraints = false
             items.append(iv)
         }
         return items
@@ -83,6 +87,7 @@ class ViewController: UIViewController {
         var items: [SmallListItemView] = []
         for x in 0..<3 {
             let iv = SmallListItemView()
+            iv.translatesAutoresizingMaskIntoConstraints = false
             items.append(iv)
         }
         return items
@@ -121,10 +126,8 @@ class ViewController: UIViewController {
         self.view.backgroundColor = .systemBlue
         
         self.view.addSubview(scrollView)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         
         self.scrollView.addSubview(contentView)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         
         let hConst = contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
         hConst.isActive = true
@@ -159,15 +162,6 @@ class ViewController: UIViewController {
         self.contentView.addSubview(sampleSmallItems[1])
         self.contentView.addSubview(sampleSmallItems[2])
         
-        welcomeHeader.translatesAutoresizingMaskIntoConstraints = false
-        
-        sampleLargeItems[0].translatesAutoresizingMaskIntoConstraints = false
-        sampleLargeItems[1].translatesAutoresizingMaskIntoConstraints = false
-        sampleLargeItems[2].translatesAutoresizingMaskIntoConstraints = false
-        
-        sampleSmallItems[0].translatesAutoresizingMaskIntoConstraints = false
-        sampleSmallItems[1].translatesAutoresizingMaskIntoConstraints = false
-        sampleSmallItems[2].translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             
