@@ -9,6 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    private let a1: [Int] = [1,2,3]
+    private let a2: [Int] = [1,2]
+    
     private lazy var collectionViewLayout: UICollectionViewLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -85,8 +88,9 @@ class ViewController: UIViewController {
         foodCategoryCollectionView.delegate = self
         foodCategoryCollectionView.dataSource = self
         popularRestaurantsCollectionView.delegate = self
-        popularRestaurantsCollectionView.delegate = self
-        foodCategoryCollectionView.register(SmallItemCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        popularRestaurantsCollectionView.dataSource = self
+        foodCategoryCollectionView.register(SmallItemCollectionViewCell.self, forCellWithReuseIdentifier: "smallItem")
+        popularRestaurantsCollectionView.register(LargeItemCollectionViewCell.self, forCellWithReuseIdentifier: "largeItem")
         self.setupUI()
     }
     
@@ -175,7 +179,12 @@ class ViewController: UIViewController {
             sampleLargeItems[2].heightAnchor.constraint(equalToConstant: 300),
             sampleLargeItems[2].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            sampleHeader2.topAnchor.constraint(equalTo: self.sampleLargeItems[2].bottomAnchor),
+            popularRestaurantsCollectionView.topAnchor.constraint(equalTo: self.sampleLargeItems[2].bottomAnchor),
+            popularRestaurantsCollectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            popularRestaurantsCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            popularRestaurantsCollectionView.heightAnchor.constraint(equalToConstant: 120),
+            
+            sampleHeader2.topAnchor.constraint(equalTo: self.popularRestaurantsCollectionView.bottomAnchor),
             sampleHeader2.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             sampleHeader2.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             sampleHeader2.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
@@ -224,8 +233,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? SmallItemCollectionViewCell else {return UICollectionViewCell()}
-        cell.setup()
-        return cell
+        if collectionView == self.foodCategoryCollectionView{
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "smallItem", for: indexPath) as? SmallItemCollectionViewCell else {return UICollectionViewCell()}
+            cell.setup()
+            return cell
+        }else if collectionView == self.popularRestaurantsCollectionView {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeItem", for: indexPath) as? LargeItemCollectionViewCell else {return UICollectionViewCell()}
+            cell.setup()
+            return cell
+        }
+        
+        return UICollectionViewCell()
     }
 }
