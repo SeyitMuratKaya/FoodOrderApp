@@ -12,14 +12,20 @@ class ViewController: UIViewController {
     private let a1: [Int] = [1,2,3]
     private let a2: [Int] = [1,2]
     
-    private lazy var collectionViewLayout: UICollectionViewLayout = {
+    private lazy var foodCategoryLayout: UICollectionViewLayout = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        return layout
+    }()
+    
+    private lazy var popularRestaurantsLayout: UICollectionViewLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         return layout
     }()
     
     private lazy var foodCategoryCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.foodCategoryLayout)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isUserInteractionEnabled = true
@@ -29,7 +35,7 @@ class ViewController: UIViewController {
     }()
     
     private lazy var popularRestaurantsCollectionView: UICollectionView = {
-        let popularRestaurantsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
+        let popularRestaurantsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.popularRestaurantsLayout)
         popularRestaurantsCollectionView.translatesAutoresizingMaskIntoConstraints = false
         popularRestaurantsCollectionView.showsHorizontalScrollIndicator = false
         popularRestaurantsCollectionView.isUserInteractionEnabled = true
@@ -75,11 +81,19 @@ class ViewController: UIViewController {
     
     private let sampleHeader1: ListHeaderView = {
         let sampleHeader = ListHeaderView()
+        sampleHeader.translatesAutoresizingMaskIntoConstraints = false
         return sampleHeader
     }()
     
     private let sampleHeader2: ListHeaderView = {
         let sampleHeader = ListHeaderView()
+        sampleHeader.translatesAutoresizingMaskIntoConstraints = false
+        return sampleHeader
+    }()
+    
+    private let sampleHeader3: ListHeaderView = {
+        let sampleHeader = ListHeaderView()
+        sampleHeader.translatesAutoresizingMaskIntoConstraints = false
         return sampleHeader
     }()
     
@@ -127,6 +141,7 @@ class ViewController: UIViewController {
         self.contentView.addSubview(sampleLargeItems[0])
         self.contentView.addSubview(sampleLargeItems[1])
         self.contentView.addSubview(sampleLargeItems[2])
+        self.contentView.addSubview(sampleHeader3)
         self.contentView.addSubview(popularRestaurantsCollectionView)
         self.contentView.addSubview(sampleHeader2)
         self.contentView.addSubview(sampleSmallItems[0])
@@ -134,12 +149,11 @@ class ViewController: UIViewController {
         self.contentView.addSubview(sampleSmallItems[2])
         
         welcomeHeader.translatesAutoresizingMaskIntoConstraints = false
-        sampleHeader1.translatesAutoresizingMaskIntoConstraints = false
+        
         sampleLargeItems[0].translatesAutoresizingMaskIntoConstraints = false
         sampleLargeItems[1].translatesAutoresizingMaskIntoConstraints = false
         sampleLargeItems[2].translatesAutoresizingMaskIntoConstraints = false
         
-        sampleHeader2.translatesAutoresizingMaskIntoConstraints = false
         sampleSmallItems[0].translatesAutoresizingMaskIntoConstraints = false
         sampleSmallItems[1].translatesAutoresizingMaskIntoConstraints = false
         sampleSmallItems[2].translatesAutoresizingMaskIntoConstraints = false
@@ -179,10 +193,15 @@ class ViewController: UIViewController {
             sampleLargeItems[2].heightAnchor.constraint(equalToConstant: 300),
             sampleLargeItems[2].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            popularRestaurantsCollectionView.topAnchor.constraint(equalTo: self.sampleLargeItems[2].bottomAnchor),
+            sampleHeader3.topAnchor.constraint(equalTo: self.sampleLargeItems[2].bottomAnchor),
+            sampleHeader3.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            sampleHeader3.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            sampleHeader3.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            
+            popularRestaurantsCollectionView.topAnchor.constraint(equalTo: self.sampleHeader3.bottomAnchor),
             popularRestaurantsCollectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             popularRestaurantsCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            popularRestaurantsCollectionView.heightAnchor.constraint(equalToConstant: 120),
+            popularRestaurantsCollectionView.heightAnchor.constraint(equalToConstant: 200),
             
             sampleHeader2.topAnchor.constraint(equalTo: self.popularRestaurantsCollectionView.bottomAnchor),
             sampleHeader2.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
@@ -211,6 +230,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if collectionView == self.foodCategoryCollectionView{
+            return CGSize(width: 88, height: 120)
+        }else if collectionView == self.popularRestaurantsCollectionView {
+            return CGSize(width: 88, height: 120)
+        }
         return CGSize(width: 88, height: 120)
     }
     
@@ -229,7 +253,13 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        if collectionView == self.foodCategoryCollectionView{
+            return 10
+        }else if collectionView == self.popularRestaurantsCollectionView {
+            return 1
+        }
+        
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
