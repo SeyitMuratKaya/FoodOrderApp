@@ -19,6 +19,7 @@
 		2FD3EEF82ADDBD210042D1C9 /* CafeRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEF72ADDBD210042D1C9 /* CafeRatingView.swift */; };
 		2FD3EEFA2ADDC9E10042D1C9 /* CafeTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEF92ADDC9E10042D1C9 /* CafeTypeView.swift */; };
 		2FD3EEFC2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEFB2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift */; };
+		2FE5C6702ADEBA50004BD600 /* SmallItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5C66F2ADEBA50004BD600 /* SmallItemCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		2FD3EEF72ADDBD210042D1C9 /* CafeRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeRatingView.swift; sourceTree = "<group>"; };
 		2FD3EEF92ADDC9E10042D1C9 /* CafeTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CafeTypeView.swift; sourceTree = "<group>"; };
 		2FD3EEFB2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
+		2FE5C66F2ADEBA50004BD600 /* SmallItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallItemCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				2FD3EEF72ADDBD210042D1C9 /* CafeRatingView.swift */,
 				2FD3EEF92ADDC9E10042D1C9 /* CafeTypeView.swift */,
 				2FD3EEFB2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift */,
+				2FE5C66F2ADEBA50004BD600 /* SmallItemCollectionViewCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				2FD3EEDE2ADD5F1E0042D1C9 /* SceneDelegate.swift in Sources */,
 				2FD3EEFC2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift in Sources */,
 				2FD3EEF42ADD8EB00042D1C9 /* LargeListItemView.swift in Sources */,
+				2FE5C6702ADEBA50004BD600 /* SmallItemCollectionViewCell.swift in Sources */,
 				2FD3EEF82ADDBD210042D1C9 /* CafeRatingView.swift in Sources */,
 				2FD3EEF22ADD82BB0042D1C9 /* ListHeaderView.swift in Sources */,
 			);

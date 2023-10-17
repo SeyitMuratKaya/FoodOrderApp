@@ -11,7 +11,6 @@ class ViewController: UIViewController {
     
     private lazy var collectionViewLayout: UICollectionViewLayout = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 8
         layout.scrollDirection = .horizontal
         return layout
     }()
@@ -22,7 +21,7 @@ class ViewController: UIViewController {
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isUserInteractionEnabled = true
         collectionView.isScrollEnabled = true
-        collectionView.backgroundColor = .systemBlue
+        collectionView.backgroundColor = .white
         return collectionView
     }()
     
@@ -75,7 +74,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         foodCategoryCollectionView.delegate = self
         foodCategoryCollectionView.dataSource = self
-        foodCategoryCollectionView.register(StoryCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        foodCategoryCollectionView.register(SmallItemCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         self.setupUI()
     }
     
@@ -127,7 +126,7 @@ class ViewController: UIViewController {
         sampleSmallItems[0].translatesAutoresizingMaskIntoConstraints = false
         sampleSmallItems[1].translatesAutoresizingMaskIntoConstraints = false
         sampleSmallItems[2].translatesAutoresizingMaskIntoConstraints = false
-    
+        
         NSLayoutConstraint.activate([
             
             welcomeHeader.topAnchor.constraint(equalTo: self.contentView.topAnchor),
@@ -138,8 +137,7 @@ class ViewController: UIViewController {
             foodCategoryCollectionView.topAnchor.constraint(equalTo: self.welcomeHeader.bottomAnchor),
             foodCategoryCollectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             foodCategoryCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            foodCategoryCollectionView.heightAnchor.constraint(equalToConstant: 90),
-//            foodCategoryCollectionView.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            foodCategoryCollectionView.heightAnchor.constraint(equalToConstant: 120),
             
             sampleHeader1.topAnchor.constraint(equalTo: self.foodCategoryCollectionView.bottomAnchor),
             sampleHeader1.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
@@ -183,9 +181,27 @@ class ViewController: UIViewController {
             sampleSmallItems[2].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             sampleSmallItems[2].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             sampleSmallItems[2].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-
+            
             sampleSmallItems[2].bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
         ])
+    }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 88, height: 120)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 18, bottom: 0, right: 18)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
     }
 }
 
@@ -195,7 +211,8 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? StoryCollectionViewCell else {return UICollectionViewCell()}
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? SmallItemCollectionViewCell else {return UICollectionViewCell()}
         cell.setup()
-        return cell    }
+        return cell
+    }
 }
