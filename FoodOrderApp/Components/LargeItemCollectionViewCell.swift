@@ -41,7 +41,7 @@ class LargeItemCollectionViewCell: UICollectionViewCell {
     private let restaurantLabel: UILabel = {
         let restaurantLabel = UILabel()
         restaurantLabel.text = "Cafe de Noir"
-        restaurantLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        restaurantLabel.font = UIFont.boldSystemFont(ofSize: 18)
         restaurantLabel.textColor = UIColor(red: 0.29, green: 0.294, blue: 0.302, alpha: 1)
         return restaurantLabel
     }()
@@ -74,24 +74,16 @@ class LargeItemCollectionViewCell: UICollectionViewCell {
         self.imageView.layer.cornerRadius = 10
     }
     
-    func setup() {
-        //self.layer.borderColor = UIColor.systemYellow.cgColor
-        //self.layer.borderWidth = 2.0
-    }
-    
     private func setupSelf() {
         self.backgroundColor = .clear
         
-        self.addSubview(VStackView)
-        VStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        VStackView.addArrangedSubview(imageView)
+        self.addSubview(imageView)
         imageView.translatesAutoresizingMaskIntoConstraints = false
         
-        VStackView.addArrangedSubview(restaurantLabel)
+        self.addSubview(restaurantLabel)
         restaurantLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        VStackView.addArrangedSubview(HStackView)
+        self.addSubview(HStackView)
         HStackView.translatesAutoresizingMaskIntoConstraints = false
         
         HStackView.addArrangedSubview(cafeType)
@@ -100,12 +92,20 @@ class LargeItemCollectionViewCell: UICollectionViewCell {
         HStackView.addArrangedSubview(cafeRating)
         cafeRating.translatesAutoresizingMaskIntoConstraints = false
         
-        
         NSLayoutConstraint.activate([
-            VStackView.topAnchor.constraint(equalTo: topAnchor),
-            VStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            VStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            VStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            imageView.topAnchor.constraint(equalTo: topAnchor),
+            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            restaurantLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,constant: 10),
+            restaurantLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
+            restaurantLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
+            
+            HStackView.topAnchor.constraint(equalTo: restaurantLabel.bottomAnchor, constant: 5),
+            HStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            HStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            HStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            
         ])
     }
 

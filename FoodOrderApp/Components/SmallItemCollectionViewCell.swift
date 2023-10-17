@@ -42,11 +42,6 @@ class SmallItemCollectionViewCell: UICollectionViewCell {
         self.categoryImage.layer.cornerRadius = 10
     }
     
-    func setup() {
-//        self.layer.borderColor = UIColor.systemYellow.cgColor
-//        self.layer.borderWidth = 2.0
-    }
-    
     private func setupSelf() {
         self.backgroundColor = .clear
         

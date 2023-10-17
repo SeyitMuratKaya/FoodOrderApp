@@ -9,9 +9,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    private let a1: [Int] = [1,2,3]
-    private let a2: [Int] = [1,2]
-    
     private lazy var foodCategoryLayout: UICollectionViewLayout = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
@@ -231,9 +228,9 @@ class ViewController: UIViewController {
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.foodCategoryCollectionView{
-            return CGSize(width: 88, height: 120)
+            return CGSize(width: 88, height: 113)
         }else if collectionView == self.popularRestaurantsCollectionView {
-            return CGSize(width: 88, height: 120)
+            return CGSize(width: 228, height: 185)
         }
         return CGSize(width: 88, height: 120)
     }
@@ -256,7 +253,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         if collectionView == self.foodCategoryCollectionView{
             return 10
         }else if collectionView == self.popularRestaurantsCollectionView {
-            return 1
+            return 3
         }
         
         return 0
@@ -265,14 +262,16 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.foodCategoryCollectionView{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "smallItem", for: indexPath) as? SmallItemCollectionViewCell else {return UICollectionViewCell()}
-            cell.setup()
             return cell
         }else if collectionView == self.popularRestaurantsCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeItem", for: indexPath) as? LargeItemCollectionViewCell else {return UICollectionViewCell()}
-            cell.setup()
             return cell
         }
         
         return UICollectionViewCell()
     }
 }
+
+//#Preview{
+//    ViewController()
+//}
