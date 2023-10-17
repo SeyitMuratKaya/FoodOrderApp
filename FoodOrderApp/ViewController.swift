@@ -58,6 +58,12 @@ class ViewController: UIViewController {
         return welcomeHeader
     }()
     
+    private let searchBar: SearchBarView = {
+        let searchBar = SearchBarView()
+        searchBar.translatesAutoresizingMaskIntoConstraints = false
+        return searchBar
+    }()
+    
     private let sampleLargeItems: [LargeListItemView] = {
         var items: [LargeListItemView] = []
         for x in 0..<3 {
@@ -133,6 +139,7 @@ class ViewController: UIViewController {
         ])
         
         self.contentView.addSubview(welcomeHeader)
+        self.contentView.addSubview(searchBar)
         self.contentView.addSubview(foodCategoryCollectionView)
         self.contentView.addSubview(sampleHeader1)
         self.contentView.addSubview(sampleLargeItems[0])
@@ -162,7 +169,12 @@ class ViewController: UIViewController {
             welcomeHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             welcomeHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            foodCategoryCollectionView.topAnchor.constraint(equalTo: self.welcomeHeader.bottomAnchor),
+            searchBar.topAnchor.constraint(equalTo: welcomeHeader.bottomAnchor),
+            searchBar.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
+            searchBar.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16),
+            searchBar.heightAnchor.constraint(equalToConstant: 50),
+            
+            foodCategoryCollectionView.topAnchor.constraint(equalTo: self.searchBar.bottomAnchor, constant: 16),
             foodCategoryCollectionView.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             foodCategoryCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             foodCategoryCollectionView.heightAnchor.constraint(equalToConstant: 120),

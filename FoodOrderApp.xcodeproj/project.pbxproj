@@ -21,6 +21,7 @@
 		2FD3EEFC2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEFB2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift */; };
 		2FE5C6702ADEBA50004BD600 /* SmallItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5C66F2ADEBA50004BD600 /* SmallItemCollectionViewCell.swift */; };
 		2FE5C6722ADED556004BD600 /* LargeItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5C6712ADED556004BD600 /* LargeItemCollectionViewCell.swift */; };
+		2FE5C6742ADF1BE1004BD600 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5C6732ADF1BE1004BD600 /* SearchBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		2FD3EEFB2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeHeaderView.swift; sourceTree = "<group>"; };
 		2FE5C66F2ADEBA50004BD600 /* SmallItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FE5C6712ADED556004BD600 /* LargeItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		2FE5C6732ADF1BE1004BD600 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 				2FD3EEFB2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift */,
 				2FE5C66F2ADEBA50004BD600 /* SmallItemCollectionViewCell.swift */,
 				2FE5C6712ADED556004BD600 /* LargeItemCollectionViewCell.swift */,
+				2FE5C6732ADF1BE1004BD600 /* SearchBarView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -176,6 +179,7 @@
 				2FD3EEFA2ADDC9E10042D1C9 /* CafeTypeView.swift in Sources */,
 				2FD3EEF62ADD9F920042D1C9 /* SmallListItemView.swift in Sources */,
 				2FD3EEDC2ADD5F1E0042D1C9 /* AppDelegate.swift in Sources */,
+				2FE5C6742ADF1BE1004BD600 /* SearchBarView.swift in Sources */,
 				2FD3EEDE2ADD5F1E0042D1C9 /* SceneDelegate.swift in Sources */,
 				2FD3EEFC2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift in Sources */,
 				2FD3EEF42ADD8EB00042D1C9 /* LargeListItemView.swift in Sources */,
