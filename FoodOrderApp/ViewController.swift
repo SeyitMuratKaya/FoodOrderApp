@@ -64,6 +64,12 @@ class ViewController: UIViewController {
         return searchBar
     }()
     
+    private let locationSelector: LocationSelectorView = {
+        let locationSelector = LocationSelectorView()
+        locationSelector.translatesAutoresizingMaskIntoConstraints = false
+        return locationSelector
+    }()
+    
     private let sampleLargeItems: [LargeListItemView] = {
         var items: [LargeListItemView] = []
         for x in 0..<3 {
@@ -139,6 +145,7 @@ class ViewController: UIViewController {
         ])
         
         self.contentView.addSubview(welcomeHeader)
+        self.contentView.addSubview(locationSelector)
         self.contentView.addSubview(searchBar)
         self.contentView.addSubview(foodCategoryCollectionView)
         self.contentView.addSubview(sampleHeader1)
@@ -169,7 +176,12 @@ class ViewController: UIViewController {
             welcomeHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             welcomeHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            searchBar.topAnchor.constraint(equalTo: welcomeHeader.bottomAnchor),
+            locationSelector.topAnchor.constraint(equalTo: welcomeHeader.bottomAnchor),
+            locationSelector.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
+            locationSelector.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16),
+            locationSelector.heightAnchor.constraint(equalToConstant: 50),
+            
+            searchBar.topAnchor.constraint(equalTo: locationSelector.bottomAnchor, constant: 16),
             searchBar.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16),
             searchBar.heightAnchor.constraint(equalToConstant: 50),

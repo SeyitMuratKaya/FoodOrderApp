@@ -22,6 +22,7 @@
 		2FE5C6702ADEBA50004BD600 /* SmallItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5C66F2ADEBA50004BD600 /* SmallItemCollectionViewCell.swift */; };
 		2FE5C6722ADED556004BD600 /* LargeItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5C6712ADED556004BD600 /* LargeItemCollectionViewCell.swift */; };
 		2FE5C6742ADF1BE1004BD600 /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5C6732ADF1BE1004BD600 /* SearchBarView.swift */; };
+		2FE5C6762ADF25AD004BD600 /* LocationSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE5C6752ADF25AD004BD600 /* LocationSelectorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		2FE5C66F2ADEBA50004BD600 /* SmallItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FE5C6712ADED556004BD600 /* LargeItemCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LargeItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		2FE5C6732ADF1BE1004BD600 /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
+		2FE5C6752ADF25AD004BD600 /* LocationSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 				2FE5C66F2ADEBA50004BD600 /* SmallItemCollectionViewCell.swift */,
 				2FE5C6712ADED556004BD600 /* LargeItemCollectionViewCell.swift */,
 				2FE5C6732ADF1BE1004BD600 /* SearchBarView.swift */,
+				2FE5C6752ADF25AD004BD600 /* LocationSelectorView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				2FE5C6702ADEBA50004BD600 /* SmallItemCollectionViewCell.swift in Sources */,
 				2FD3EEF82ADDBD210042D1C9 /* CafeRatingView.swift in Sources */,
 				2FE5C6722ADED556004BD600 /* LargeItemCollectionViewCell.swift in Sources */,
+				2FE5C6762ADF25AD004BD600 /* LocationSelectorView.swift in Sources */,
 				2FD3EEF22ADD82BB0042D1C9 /* ListHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
