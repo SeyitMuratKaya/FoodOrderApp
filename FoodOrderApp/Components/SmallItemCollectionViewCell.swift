@@ -22,7 +22,7 @@ class SmallItemCollectionViewCell: UICollectionViewCell {
         let categoryLabel = UILabel()
         categoryLabel.translatesAutoresizingMaskIntoConstraints = false
         categoryLabel.font = UIFont.boldSystemFont(ofSize: 14)
-        categoryLabel.textColor = UIColor(red: 0.29, green: 0.294, blue: 0.302, alpha: 1)
+        categoryLabel.textColor = UIColor(named: "Header")
         categoryLabel.textAlignment = .center
         categoryLabel.text = "Italian"
         return categoryLabel

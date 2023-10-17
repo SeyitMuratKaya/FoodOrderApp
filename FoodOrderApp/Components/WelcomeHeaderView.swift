@@ -21,7 +21,7 @@ class WelcomeHeaderView: UIView {
         let welcomeText = UILabel()
         welcomeText.text = "Good Morning, Murat"
         welcomeText.font = UIFont.boldSystemFont(ofSize: 20)
-        welcomeText.textColor = UIColor(red: 0.29, green: 0.294, blue: 0.302, alpha: 1)
+        welcomeText.textColor = UIColor(named: "Header")
         return welcomeText
     }()
     
@@ -29,7 +29,7 @@ class WelcomeHeaderView: UIView {
         let cartImage = UIImageView()
         let config = UIImage.SymbolConfiguration(pointSize: 22)
         cartImage.image = UIImage(systemName: "cart.fill", withConfiguration: config)
-        cartImage.tintColor = UIColor(red: 0.29, green: 0.294, blue: 0.302, alpha: 1)
+        cartImage.tintColor = UIColor(named: "Header")
         return cartImage
     }()
 

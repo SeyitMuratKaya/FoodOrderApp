@@ -13,7 +13,7 @@ class ListHeaderView: UIView {
         let headerText = UILabel()
         headerText.text = "Popular Restaurants"
         headerText.font = UIFont.boldSystemFont(ofSize: 20)
-        headerText.textColor = UIColor(red: 0.29, green: 0.294, blue: 0.302, alpha: 1)
+        headerText.textColor = UIColor(named: "Header")
         return headerText
     }()
     
@@ -21,7 +21,7 @@ class ListHeaderView: UIView {
         let navigationText = UILabel()
         navigationText.text = "View All"
         navigationText.font = UIFont.systemFont(ofSize: 13)
-        navigationText.textColor = UIColor(red: 0.988, green: 0.376, blue: 0.067, alpha: 1)
+        navigationText.textColor = UIColor(named: "ButtonColor")
         return navigationText
     }()
     

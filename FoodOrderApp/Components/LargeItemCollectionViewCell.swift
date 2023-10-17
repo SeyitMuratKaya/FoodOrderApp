@@ -42,7 +42,7 @@ class LargeItemCollectionViewCell: UICollectionViewCell {
         let restaurantLabel = UILabel()
         restaurantLabel.text = "Cafe de Noir"
         restaurantLabel.font = UIFont.boldSystemFont(ofSize: 18)
-        restaurantLabel.textColor = UIColor(red: 0.29, green: 0.294, blue: 0.302, alpha: 1)
+        restaurantLabel.textColor = UIColor(named: "Header")
         return restaurantLabel
     }()
     

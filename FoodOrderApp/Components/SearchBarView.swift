@@ -14,7 +14,7 @@ class SearchBarView: UIView {
         let config = UIImage.SymbolConfiguration(pointSize: 24)
         iconLabel.translatesAutoresizingMaskIntoConstraints = false
         iconLabel.image = UIImage(systemName: "magnifyingglass",withConfiguration: config)
-        iconLabel.tintColor = UIColor(red: 0.486, green: 0.49, blue: 0.494, alpha: 1)
+        iconLabel.tintColor = UIColor(named: "SearchPlaceholder")
         iconLabel.contentMode = .scaleAspectFit
         return iconLabel
     }()
@@ -23,7 +23,7 @@ class SearchBarView: UIView {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.placeholder = "Search Food"
-        textField.textColor = UIColor(red: 0.486, green: 0.49, blue: 0.494, alpha: 1)
+        textField.textColor = UIColor(named: "SearchPlaceholder")
         return textField
     }()
 
@@ -42,7 +42,7 @@ class SearchBarView: UIView {
         self.addSubview(textField)
         
         self.layer.cornerRadius = 26
-        self.backgroundColor = UIColor(red: 0.949, green: 0.949, blue: 0.949, alpha: 1)
+        self.backgroundColor = UIColor(named: "SearchBackground")
         
         NSLayoutConstraint.activate([
             iconLabel.topAnchor.constraint(equalTo: topAnchor),

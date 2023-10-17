@@ -30,21 +30,21 @@ class CafeRatingView: UIView {
         let config = UIImage.SymbolConfiguration(pointSize: 14)
         starImage.image = UIImage(systemName: "star.fill",withConfiguration: config)
         starImage.contentMode = .scaleAspectFit
-        starImage.tintColor = UIColor(red: 0.988, green: 0.376, blue: 0.067, alpha: 1)
+        starImage.tintColor = UIColor(named: "ButtonColor")
         return starImage
     }()
     
     private var ratingPoint: UILabel = {
         let ratingPoint = UILabel()
         ratingPoint.font = UIFont.boldSystemFont(ofSize: 12)
-        ratingPoint.textColor = UIColor(red: 0.988, green: 0.376, blue: 0.067, alpha: 1)
+        ratingPoint.textColor = UIColor(named: "ButtonColor")
         return ratingPoint
     }()
     
     private var ratingCount: UILabel = {
         let ratingCount = UILabel()
         ratingCount.font = UIFont.systemFont(ofSize: 12)
-        ratingCount.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
+        ratingCount.textColor = UIColor(named: "PaleGray")
         return ratingCount
     }()
     

@@ -24,14 +24,14 @@ class CafeTypeView: UIView {
     public var restaurantTypeLabel: UILabel = {
         let restaurantTypeLabel = UILabel()
         restaurantTypeLabel.font = UIFont.systemFont(ofSize: 12)
-        restaurantTypeLabel.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
+        restaurantTypeLabel.textColor = UIColor(named: "PaleGray")
         return restaurantTypeLabel
     }()
     
     public var foodTypeLable: UILabel = {
         let foodTypeLable = UILabel()
         foodTypeLable.font = UIFont.systemFont(ofSize: 12)
-        foodTypeLable.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
+        foodTypeLable.textColor = UIColor(named: "PaleGray")
         return foodTypeLable
     }()
     

@@ -13,7 +13,7 @@ class LocationSelectorView: UIView {
         let topLabel = UILabel()
         topLabel.translatesAutoresizingMaskIntoConstraints = false
         topLabel.text = "Delivering to"
-        topLabel.textColor = UIColor(red: 0.714, green: 0.718, blue: 0.718, alpha: 1)
+        topLabel.textColor = UIColor(named: "PaleGray")
         topLabel.font = UIFont.systemFont(ofSize: 11)
         return topLabel
     }()
@@ -22,7 +22,7 @@ class LocationSelectorView: UIView {
         let locationSelector = UILabel()
         locationSelector.translatesAutoresizingMaskIntoConstraints = false
         locationSelector.text = "Current Location"
-        locationSelector.textColor = UIColor(red: 0.486, green: 0.49, blue: 0.494, alpha: 1)
+        locationSelector.textColor = UIColor(named: "Gray2")
         locationSelector.sizeToFit()
         locationSelector.font = UIFont.boldSystemFont(ofSize: 16)
         return locationSelector
@@ -32,7 +32,7 @@ class LocationSelectorView: UIView {
         let selectionButton = UIButton()
         selectionButton.translatesAutoresizingMaskIntoConstraints = false
         selectionButton.setImage(UIImage(systemName: "chevron.down"), for: .normal)
-        selectionButton.tintColor = UIColor(red: 0.988, green: 0.376, blue: 0.067, alpha: 1)
+        selectionButton.tintColor = UIColor(named: "ButtonColor")
         return selectionButton
     }()
     
