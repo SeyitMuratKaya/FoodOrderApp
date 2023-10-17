@@ -25,6 +25,16 @@ class ViewController: UIViewController {
         return collectionView
     }()
     
+    private lazy var popularRestaurantsCollectionView: UICollectionView = {
+        let popularRestaurantsCollectionView = UICollectionView(frame: .zero, collectionViewLayout: self.collectionViewLayout)
+        popularRestaurantsCollectionView.translatesAutoresizingMaskIntoConstraints = false
+        popularRestaurantsCollectionView.showsHorizontalScrollIndicator = false
+        popularRestaurantsCollectionView.isUserInteractionEnabled = true
+        popularRestaurantsCollectionView.isScrollEnabled = true
+        popularRestaurantsCollectionView.backgroundColor = .white
+        return popularRestaurantsCollectionView
+    }()
+    
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .systemRed
@@ -74,6 +84,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         foodCategoryCollectionView.delegate = self
         foodCategoryCollectionView.dataSource = self
+        popularRestaurantsCollectionView.delegate = self
+        popularRestaurantsCollectionView.delegate = self
         foodCategoryCollectionView.register(SmallItemCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         self.setupUI()
     }
@@ -111,6 +123,7 @@ class ViewController: UIViewController {
         self.contentView.addSubview(sampleLargeItems[0])
         self.contentView.addSubview(sampleLargeItems[1])
         self.contentView.addSubview(sampleLargeItems[2])
+        self.contentView.addSubview(popularRestaurantsCollectionView)
         self.contentView.addSubview(sampleHeader2)
         self.contentView.addSubview(sampleSmallItems[0])
         self.contentView.addSubview(sampleSmallItems[1])
