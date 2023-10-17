@@ -93,7 +93,7 @@ class LargeListItemView: UIView {
         self.HStackView.addArrangedSubview(cafeType)
         cafeType.translatesAutoresizingMaskIntoConstraints = false
         
-        innerVStackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        innerVStackView.layoutMargins = UIEdgeInsets(top: 8, left: 16, bottom: 16, right: 16)
         innerVStackView.isLayoutMarginsRelativeArrangement = true
         
         NSLayoutConstraint.activate([

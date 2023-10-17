@@ -8,7 +8,15 @@
 import UIKit
 
 class ListHeaderView: UIView {
-    // TODO: add colors to assets
+    
+    public var text: String? {
+        didSet {
+            if let text {
+                headerText.text = text
+            }
+        }
+    }
+    
     private let headerText: UILabel = {
         let headerText = UILabel()
         headerText.text = "Popular Restaurants"
