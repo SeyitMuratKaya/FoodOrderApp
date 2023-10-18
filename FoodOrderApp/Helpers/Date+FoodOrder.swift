@@ -13,7 +13,7 @@ extension Date {
         let hour = calendar.component(.hour, from: self)
         
         switch hour {
-        case 0..<12:
+        case 3..<12:
             return "Good Morning"
         case 12..<17:
             return "Good Afternoon"
