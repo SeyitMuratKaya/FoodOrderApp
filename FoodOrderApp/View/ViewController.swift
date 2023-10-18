@@ -138,7 +138,7 @@ class ViewController: UIViewController {
     }
     
     private func setupUI() {
-        self.view.backgroundColor = .systemBlue
+        self.view.backgroundColor = .white
         
         self.view.addSubview(scrollView)
         
@@ -149,7 +149,7 @@ class ViewController: UIViewController {
         hConst.priority = UILayoutPriority(50)
         
         NSLayoutConstraint.activate([
-            scrollView.topAnchor.constraint(equalTo: self.view.topAnchor),
+            scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
