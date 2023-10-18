@@ -75,22 +75,32 @@ class ViewController: UIViewController {
     
     private let sampleLargeItems: [LargeListItemView] = {
         var items: [LargeListItemView] = []
-        for i in 1...3 {
-            let imageView = LargeListItemView()
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.image = UIImage(named: "largeItem\(i)")
-            items.append(imageView)
+        for i in 0..<3 {
+            let item = LargeListItemView()
+            item.translatesAutoresizingMaskIntoConstraints = false
+            item.name = Restaurant.largeItemSampleData[i].name
+            item.rating = Restaurant.largeItemSampleData[i].rating
+            item.ratingCount = Restaurant.largeItemSampleData[i].ratingCount
+            item.restaurantType = Restaurant.largeItemSampleData[i].restaurantType
+            item.foodType = Restaurant.largeItemSampleData[i].foodType
+            item.image = UIImage(named: "largeItem\(i+1)")
+            items.append(item)
         }
         return items
     }()
     
     private let sampleSmallItems: [SmallListItemView] = {
         var items: [SmallListItemView] = []
-        for i in 1...3 {
-            let imageView = SmallListItemView()
-            imageView.translatesAutoresizingMaskIntoConstraints = false
-            imageView.image = UIImage(named: "smallItem\(i)")
-            items.append(imageView)
+        for i in 0..<3 {
+            let item = SmallListItemView()
+            item.translatesAutoresizingMaskIntoConstraints = false
+            item.name = Restaurant.largeItemSampleData[i].name
+            item.rating = Restaurant.largeItemSampleData[i].rating
+            item.ratingCount = Restaurant.largeItemSampleData[i].ratingCount
+            item.restaurantType = Restaurant.largeItemSampleData[i].restaurantType
+            item.foodType = Restaurant.largeItemSampleData[i].foodType
+            item.image = UIImage(named: "smallItem\(i+1)")
+            items.append(item)
         }
         return items
     }()

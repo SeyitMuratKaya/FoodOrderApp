@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2F54EF372AE0076E00A15D38 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EF362AE0076E00A15D38 /* TabBarViewController.swift */; };
+		2F54EF3A2AE01D2E00A15D38 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EF392AE01D2E00A15D38 /* Restaurant.swift */; };
 		2FD3EEDC2ADD5F1E0042D1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEDB2ADD5F1E0042D1C9 /* AppDelegate.swift */; };
 		2FD3EEDE2ADD5F1E0042D1C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEDD2ADD5F1E0042D1C9 /* SceneDelegate.swift */; };
 		2FD3EEE02ADD5F1E0042D1C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEDF2ADD5F1E0042D1C9 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		2F54EF362AE0076E00A15D38 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		2F54EF392AE01D2E00A15D38 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		2FD3EED82ADD5F1E0042D1C9 /* FoodOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD3EEDB2ADD5F1E0042D1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD3EEDD2ADD5F1E0042D1C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2F54EF382AE01D1700A15D38 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EF392AE01D2E00A15D38 /* Restaurant.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		2FD3EECF2ADD5F1D0042D1C9 = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		2FD3EEDA2ADD5F1E0042D1C9 /* FoodOrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EF382AE01D1700A15D38 /* Model */,
 				2F54EF342AE0074C00A15D38 /* View */,
 				2FD3EEF02ADD7E050042D1C9 /* Components */,
 				2FD3EEDB2ADD5F1E0042D1C9 /* AppDelegate.swift */,
@@ -194,6 +205,7 @@
 				2FD3EEF62ADD9F920042D1C9 /* SmallListItemView.swift in Sources */,
 				2FD3EEDC2ADD5F1E0042D1C9 /* AppDelegate.swift in Sources */,
 				2F54EF372AE0076E00A15D38 /* TabBarViewController.swift in Sources */,
+				2F54EF3A2AE01D2E00A15D38 /* Restaurant.swift in Sources */,
 				2FE5C6742ADF1BE1004BD600 /* SearchBarView.swift in Sources */,
 				2FD3EEDE2ADD5F1E0042D1C9 /* SceneDelegate.swift in Sources */,
 				2FD3EEFC2ADDEFBC0042D1C9 /* WelcomeHeaderView.swift in Sources */,
