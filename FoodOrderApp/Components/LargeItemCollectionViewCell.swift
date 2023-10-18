@@ -147,6 +147,7 @@ class LargeItemCollectionViewCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            imageView.widthAnchor.constraint(equalTo: widthAnchor),
             
             restaurantLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor,constant: 10),
             restaurantLabel.leadingAnchor.constraint(equalTo: leadingAnchor),

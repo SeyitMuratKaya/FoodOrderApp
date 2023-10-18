@@ -23,8 +23,8 @@ class LocationSelectorView: UIView {
         locationSelector.translatesAutoresizingMaskIntoConstraints = false
         locationSelector.text = "Current Location"
         locationSelector.textColor = UIColor(named: "Gray2")
-        locationSelector.sizeToFit()
         locationSelector.font = UIFont.boldSystemFont(ofSize: 16)
+        locationSelector.sizeToFit()
         return locationSelector
     }()
     
@@ -58,11 +58,10 @@ class LocationSelectorView: UIView {
             
             locationSelector.topAnchor.constraint(equalTo: topLabel.bottomAnchor),
             locationSelector.leadingAnchor.constraint(equalTo: leadingAnchor),
-            selectionButton.bottomAnchor.constraint(equalTo: bottomAnchor),
+            locationSelector.bottomAnchor.constraint(equalTo: bottomAnchor),
             
             selectionButton.topAnchor.constraint(equalTo: topLabel.bottomAnchor),
-            selectionButton.leadingAnchor.constraint(equalTo: locationSelector.trailingAnchor),
-            selectionButton.trailingAnchor.constraint(equalTo: trailingAnchor),
+            selectionButton.trailingAnchor.constraint(equalTo: trailingAnchor,constant: -170),
             selectionButton.bottomAnchor.constraint(equalTo: bottomAnchor)
             
         ])

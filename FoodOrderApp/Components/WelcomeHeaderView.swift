@@ -44,23 +44,20 @@ class WelcomeHeaderView: UIView {
     }
     
     private func setup() {
-        self.addSubview(HStackView)
-        HStackView.translatesAutoresizingMaskIntoConstraints = false
-        
-        HStackView.addArrangedSubview(welcomeText)
+        self.addSubview(welcomeText)
         welcomeText.translatesAutoresizingMaskIntoConstraints = false
         
-        HStackView.addArrangedSubview(cartImage)
+        self.addSubview(cartImage)
         cartImage.translatesAutoresizingMaskIntoConstraints = false
         
-        HStackView.layoutMargins = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
-        HStackView.isLayoutMarginsRelativeArrangement = true
-        
         NSLayoutConstraint.activate([
-            HStackView.topAnchor.constraint(equalTo: topAnchor),
-            HStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            HStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            HStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            welcomeText.topAnchor.constraint(equalTo: topAnchor),
+            welcomeText.leadingAnchor.constraint(equalTo: leadingAnchor),
+            welcomeText.bottomAnchor.constraint(equalTo: bottomAnchor),
+            
+            cartImage.topAnchor.constraint(equalTo: topAnchor),
+            cartImage.trailingAnchor.constraint(equalTo: trailingAnchor),
+            cartImage.bottomAnchor.constraint(equalTo: bottomAnchor),
         ])
     }
 

@@ -44,6 +44,9 @@ class SearchBarView: UIView {
         self.layer.cornerRadius = 26
         self.backgroundColor = UIColor(named: "SearchBackground")
         
+        iconLabel.setContentHuggingPriority(.defaultHigh + 1, for: .horizontal)
+        textField.setContentHuggingPriority(.defaultHigh, for: .horizontal)
+        
         NSLayoutConstraint.activate([
             iconLabel.topAnchor.constraint(equalTo: topAnchor),
             iconLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),

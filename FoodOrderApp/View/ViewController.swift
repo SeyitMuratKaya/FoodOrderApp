@@ -180,10 +180,9 @@ class ViewController: UIViewController {
         
         NSLayoutConstraint.activate([
             
-            welcomeHeader.topAnchor.constraint(equalTo: self.contentView.topAnchor),
-            welcomeHeader.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            welcomeHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            welcomeHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            welcomeHeader.topAnchor.constraint(equalTo: self.contentView.topAnchor, constant: 16),
+            welcomeHeader.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),
+            welcomeHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor, constant: -16),
             
             locationSelector.topAnchor.constraint(equalTo: welcomeHeader.bottomAnchor),
             locationSelector.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor, constant: 16),

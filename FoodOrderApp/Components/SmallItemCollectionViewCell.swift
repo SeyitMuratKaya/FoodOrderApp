@@ -68,7 +68,7 @@ class SmallItemCollectionViewCell: UICollectionViewCell {
             categoryImage.topAnchor.constraint(equalTo: topAnchor),
             categoryImage.leadingAnchor.constraint(equalTo: leadingAnchor),
             categoryImage.trailingAnchor.constraint(equalTo: trailingAnchor),
-//            categoryImage.heightAnchor.constraint(equalToConstant: 88),
+            categoryImage.heightAnchor.constraint(equalToConstant: 88),
             
             categoryLabel.topAnchor.constraint(equalTo: categoryImage.bottomAnchor),
             categoryLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
