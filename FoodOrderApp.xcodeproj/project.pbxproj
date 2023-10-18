@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2F54EF372AE0076E00A15D38 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EF362AE0076E00A15D38 /* TabBarViewController.swift */; };
 		2F54EF3A2AE01D2E00A15D38 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EF392AE01D2E00A15D38 /* Restaurant.swift */; };
+		2F54EF3D2AE05B9200A15D38 /* Date+FoodOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EF3C2AE05B9200A15D38 /* Date+FoodOrder.swift */; };
 		2FD3EEDC2ADD5F1E0042D1C9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEDB2ADD5F1E0042D1C9 /* AppDelegate.swift */; };
 		2FD3EEDE2ADD5F1E0042D1C9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEDD2ADD5F1E0042D1C9 /* SceneDelegate.swift */; };
 		2FD3EEE02ADD5F1E0042D1C9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD3EEDF2ADD5F1E0042D1C9 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		2F54EF362AE0076E00A15D38 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		2F54EF392AE01D2E00A15D38 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
+		2F54EF3C2AE05B9200A15D38 /* Date+FoodOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FoodOrder.swift"; sourceTree = "<group>"; };
 		2FD3EED82ADD5F1E0042D1C9 /* FoodOrderApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodOrderApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FD3EEDB2ADD5F1E0042D1C9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2FD3EEDD2ADD5F1E0042D1C9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2F54EF3B2AE05B6C00A15D38 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				2F54EF3C2AE05B9200A15D38 /* Date+FoodOrder.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		2FD3EECF2ADD5F1D0042D1C9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +109,7 @@
 		2FD3EEDA2ADD5F1E0042D1C9 /* FoodOrderApp */ = {
 			isa = PBXGroup;
 			children = (
+				2F54EF3B2AE05B6C00A15D38 /* Helpers */,
 				2F54EF382AE01D1700A15D38 /* Model */,
 				2F54EF342AE0074C00A15D38 /* View */,
 				2FD3EEF02ADD7E050042D1C9 /* Components */,
@@ -212,6 +223,7 @@
 				2FD3EEF42ADD8EB00042D1C9 /* LargeListItemView.swift in Sources */,
 				2FE5C6702ADEBA50004BD600 /* SmallItemCollectionViewCell.swift in Sources */,
 				2FD3EEF82ADDBD210042D1C9 /* CafeRatingView.swift in Sources */,
+				2F54EF3D2AE05B9200A15D38 /* Date+FoodOrder.swift in Sources */,
 				2FE5C6722ADED556004BD600 /* LargeItemCollectionViewCell.swift in Sources */,
 				2FE5C6762ADF25AD004BD600 /* LocationSelectorView.swift in Sources */,
 				2FD3EEF22ADD82BB0042D1C9 /* ListHeaderView.swift in Sources */,

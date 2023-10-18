@@ -19,7 +19,7 @@ class WelcomeHeaderView: UIView {
     
     private let welcomeText: UILabel = {
         let welcomeText = UILabel()
-        welcomeText.text = "Good Morning, Murat"
+        welcomeText.text = "\(Date().timeOfDayGreeting()), Murat"
         welcomeText.font = UIFont.boldSystemFont(ofSize: 20)
         welcomeText.textColor = UIColor(named: "Header")
         return welcomeText
