@@ -40,4 +40,18 @@ extension Restaurant {
         Restaurant(name: "Barita", image: "smallItem2", rating: 3.0, ratingCount: 12, restaurantType: "Cafe", foodType: "Western Food"),
         Restaurant(name: "Pizza Rush Hour", image: "smallItem3", rating: 4.6, ratingCount: 234, restaurantType: "Pizzaria", foodType: "Western Food"),
     ]
+    
+    static var smallCellSampleData = [
+        Restaurant(name: "Offers", image: "smallScroll1", rating: 4.4, ratingCount: 70, restaurantType: "Pizzaria", foodType: "Western Food"),
+        Restaurant(name: "Sri Lankan", image: "smallScroll2", rating: 3.0, ratingCount: 12, restaurantType: "Cafe", foodType: "Western Food"),
+        Restaurant(name: "Italian", image: "smallScroll3", rating: 4.6, ratingCount: 234, restaurantType: "Pizzaria", foodType: "Western Food"),
+        Restaurant(name: "Indian", image: "smallScroll4", rating: 4.4, ratingCount: 70, restaurantType: "Pizzaria", foodType: "Western Food"),
+        Restaurant(name: "French", image: "smallScroll5", rating: 3.0, ratingCount: 12, restaurantType: "Cafe", foodType: "Western Food"),
+        Restaurant(name: "Chinese", image: "smallScroll6", rating: 4.6, ratingCount: 234, restaurantType: "Pizzaria", foodType: "Western Food"),
+    ]
+    
+    static var largeCellSampleData = [
+        Restaurant(name: "Cafe de Bamba", image: "largeScroll1", rating: 4.9, ratingCount: 124, restaurantType: "Cafe", foodType: "Western Food"),
+        Restaurant(name: "Burger By Bella", image: "largeScroll1", rating: 4.5, ratingCount: 20, restaurantType: "Cafe", foodType: "Western Food"),
+    ]
 }

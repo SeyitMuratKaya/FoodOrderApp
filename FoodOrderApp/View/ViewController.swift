@@ -284,9 +284,9 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == self.foodCategoryCollectionView{
-            return 10
+            return Restaurant.smallCellSampleData.count
         }else if collectionView == self.popularRestaurantsCollectionView {
-            return 3
+            return Restaurant.largeCellSampleData.count
         }
         
         return 0
@@ -295,9 +295,17 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == self.foodCategoryCollectionView{
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "smallItem", for: indexPath) as? SmallItemCollectionViewCell else {return UICollectionViewCell()}
+            cell.name = Restaurant.smallCellSampleData[indexPath.row].name
+            cell.image = UIImage(named: Restaurant.smallCellSampleData[indexPath.row].image)
             return cell
         }else if collectionView == self.popularRestaurantsCollectionView {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "largeItem", for: indexPath) as? LargeItemCollectionViewCell else {return UICollectionViewCell()}
+            cell.name = Restaurant.largeItemSampleData[indexPath.row].name
+            cell.rating = Restaurant.largeItemSampleData[indexPath.row].rating
+            cell.ratingCount = Restaurant.largeItemSampleData[indexPath.row].ratingCount
+            cell.restaurantType = Restaurant.largeItemSampleData[indexPath.row].restaurantType
+            cell.foodType = Restaurant.largeItemSampleData[indexPath.row].foodType
+            cell.image = UIImage(named: Restaurant.largeCellSampleData[indexPath.row].image)
             return cell
         }
         

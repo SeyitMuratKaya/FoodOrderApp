@@ -9,6 +9,22 @@ import UIKit
 
 class SmallItemCollectionViewCell: UICollectionViewCell {
     
+    public var image: UIImage? {
+        didSet {
+            if let image {
+                categoryImage.image = image
+            }
+        }
+    }
+    
+    public var name: String? {
+        didSet {
+            if let name {
+                categoryLabel.text = name
+            }
+        }
+    }
+    
     private let categoryImage: UIImageView = {
         let categoryImage = UIImageView()
         categoryImage.image = UIImage(named: "smallItem1")

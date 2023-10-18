@@ -8,6 +8,57 @@
 import UIKit
 
 class LargeItemCollectionViewCell: UICollectionViewCell {
+    
+    public var name: String? {
+        didSet {
+            if let name {
+                restaurantLabel.text = name
+            }
+        }
+    }
+    
+    public var rating: Double? {
+        didSet {
+            if let rating {
+                cafeRating.rating = rating
+            }
+        }
+    }
+    
+    public var ratingCount: Int? {
+        didSet {
+            if let ratingCount {
+                cafeRating.totalRating = ratingCount
+            }
+        }
+    }
+    
+    public var restaurantType: String? {
+        didSet {
+            if let restaurantType {
+                cafeType.restaurantType = restaurantType
+            }
+        }
+    }
+    
+    public var foodType: String? {
+        didSet {
+            if let foodType {
+                cafeType.foodType = foodType
+            }
+        }
+    }
+    
+    
+    public var image: UIImage? {
+        didSet {
+            if let image {
+                imageView.image = image
+            }
+        }
+    }
+
+    
     private let imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "largeItem3")
