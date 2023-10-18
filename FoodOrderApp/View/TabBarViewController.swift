@@ -8,15 +8,15 @@
 import UIKit
 
 class TabBarViewController: UITabBarController {
-
+    
     private let middleButton : UIButton = {
-        let middleButton = UIButton() //UIButton(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
+        let middleButton = UIButton()
         middleButton.translatesAutoresizingMaskIntoConstraints = false
         let config = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .large)
         if let image = UIImage(systemName: "house.fill", withConfiguration: config) {
-            middleButton.setImage(image.withTintColor(.white), for: .normal)
+            middleButton.setImage(image, for: .normal)
         }
-        
+        middleButton.tintColor = .white
         middleButton.backgroundColor = UIColor.orange
         middleButton.layer.cornerRadius = 30
         middleButton.layer.shadowOffset = CGSize(width: 4, height: 4)
