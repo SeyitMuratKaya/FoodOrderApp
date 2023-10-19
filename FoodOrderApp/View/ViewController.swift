@@ -72,23 +72,7 @@ class ViewController: UIViewController {
         locationSelector.translatesAutoresizingMaskIntoConstraints = false
         return locationSelector
     }()
-    
-    private let sampleLargeItems: [LargeListItemView] = {
-        var items: [LargeListItemView] = []
-        for i in 0..<3 {
-            let item = LargeListItemView()
-            item.translatesAutoresizingMaskIntoConstraints = false
-            item.name = Restaurant.largeItemSampleData[i].name
-            item.rating = Restaurant.largeItemSampleData[i].rating
-            item.ratingCount = Restaurant.largeItemSampleData[i].ratingCount
-            item.restaurantType = Restaurant.largeItemSampleData[i].restaurantType
-            item.foodType = Restaurant.largeItemSampleData[i].foodType
-            item.image = UIImage(named: "largeItem\(i+1)")
-            items.append(item)
-        }
-        return items
-    }()
-    
+        
     private let sampleSmallItems: [SmallListItemView] = {
         var items: [SmallListItemView] = []
         for i in 0..<3 {
@@ -137,6 +121,12 @@ class ViewController: UIViewController {
         self.setupUI()
     }
     
+    let largeItemsVC: LargeItemViewController = {
+        let largeItemsVC = LargeItemViewController()
+        largeItemsVC.view.translatesAutoresizingMaskIntoConstraints = false
+        return largeItemsVC
+    }()
+    
     private func setupUI() {
         self.view.backgroundColor = .white
         
@@ -167,9 +157,11 @@ class ViewController: UIViewController {
         self.contentView.addSubview(searchBar)
         self.contentView.addSubview(foodCategoryCollectionView)
         self.contentView.addSubview(popularRestaurantsHeader)
-        self.contentView.addSubview(sampleLargeItems[0])
-        self.contentView.addSubview(sampleLargeItems[1])
-        self.contentView.addSubview(sampleLargeItems[2])
+        
+        addChild(largeItemsVC)
+        self.contentView.addSubview(largeItemsVC.view)
+        self.largeItemsVC.didMove(toParent: self)
+        
         self.contentView.addSubview(mostPopularHeader)
         self.contentView.addSubview(popularRestaurantsCollectionView)
         self.contentView.addSubview(recentItemsHeader)
@@ -203,26 +195,13 @@ class ViewController: UIViewController {
             popularRestaurantsHeader.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             popularRestaurantsHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             popularRestaurantsHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+
+            largeItemsVC.view.topAnchor.constraint(equalTo: self.popularRestaurantsHeader.bottomAnchor),
+            largeItemsVC.view.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            largeItemsVC.view.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            largeItemsVC.view.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            sampleLargeItems[0].topAnchor.constraint(equalTo: self.popularRestaurantsHeader.bottomAnchor),
-            sampleLargeItems[0].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            sampleLargeItems[0].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            sampleLargeItems[0].heightAnchor.constraint(equalToConstant: 300),
-            sampleLargeItems[0].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-            
-            sampleLargeItems[1].topAnchor.constraint(equalTo: self.sampleLargeItems[0].bottomAnchor),
-            sampleLargeItems[1].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            sampleLargeItems[1].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            sampleLargeItems[1].heightAnchor.constraint(equalToConstant: 300),
-            sampleLargeItems[1].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-            
-            sampleLargeItems[2].topAnchor.constraint(equalTo: self.sampleLargeItems[1].bottomAnchor),
-            sampleLargeItems[2].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            sampleLargeItems[2].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            sampleLargeItems[2].heightAnchor.constraint(equalToConstant: 300),
-            sampleLargeItems[2].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-            
-            mostPopularHeader.topAnchor.constraint(equalTo: self.sampleLargeItems[2].bottomAnchor),
+            mostPopularHeader.topAnchor.constraint(equalTo: self.largeItemsVC.view.bottomAnchor),
             mostPopularHeader.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             mostPopularHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             mostPopularHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
