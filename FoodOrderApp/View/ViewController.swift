@@ -72,23 +72,7 @@ class ViewController: UIViewController {
         locationSelector.translatesAutoresizingMaskIntoConstraints = false
         return locationSelector
     }()
-        
-    private let sampleSmallItems: [SmallListItemView] = {
-        var items: [SmallListItemView] = []
-        for i in 0..<3 {
-            let item = SmallListItemView()
-            item.translatesAutoresizingMaskIntoConstraints = false
-            item.name = Restaurant.largeItemSampleData[i].name
-            item.rating = Restaurant.largeItemSampleData[i].rating
-            item.ratingCount = Restaurant.largeItemSampleData[i].ratingCount
-            item.restaurantType = Restaurant.largeItemSampleData[i].restaurantType
-            item.foodType = Restaurant.largeItemSampleData[i].foodType
-            item.image = UIImage(named: "smallItem\(i+1)")
-            items.append(item)
-        }
-        return items
-    }()
-    
+            
     private let popularRestaurantsHeader: ListHeaderView = {
         let popularRestaurantsHeader = ListHeaderView()
         popularRestaurantsHeader.translatesAutoresizingMaskIntoConstraints = false
@@ -125,6 +109,12 @@ class ViewController: UIViewController {
         let largeItemsVC = LargeItemViewController()
         largeItemsVC.view.translatesAutoresizingMaskIntoConstraints = false
         return largeItemsVC
+    }()
+    
+    let smallItemsVC: SmallItemViewController = {
+        let smallItemsVC = SmallItemViewController()
+        smallItemsVC.view.translatesAutoresizingMaskIntoConstraints = false
+        return smallItemsVC
     }()
     
     private func setupUI() {
@@ -165,9 +155,10 @@ class ViewController: UIViewController {
         self.contentView.addSubview(mostPopularHeader)
         self.contentView.addSubview(popularRestaurantsCollectionView)
         self.contentView.addSubview(recentItemsHeader)
-        self.contentView.addSubview(sampleSmallItems[0])
-        self.contentView.addSubview(sampleSmallItems[1])
-        self.contentView.addSubview(sampleSmallItems[2])
+        
+        addChild(smallItemsVC)
+        self.contentView.addSubview(smallItemsVC.view)
+        self.smallItemsVC.didMove(toParent: self)
         
         
         NSLayoutConstraint.activate([
@@ -216,22 +207,12 @@ class ViewController: UIViewController {
             recentItemsHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             recentItemsHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            sampleSmallItems[0].topAnchor.constraint(equalTo: self.recentItemsHeader.bottomAnchor),
-            sampleSmallItems[0].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            sampleSmallItems[0].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            sampleSmallItems[0].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
+            smallItemsVC.view.topAnchor.constraint(equalTo: self.recentItemsHeader.bottomAnchor),
+            smallItemsVC.view.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
+            smallItemsVC.view.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
+            smallItemsVC.view.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
             
-            sampleSmallItems[1].topAnchor.constraint(equalTo: self.sampleSmallItems[0].bottomAnchor),
-            sampleSmallItems[1].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            sampleSmallItems[1].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            sampleSmallItems[1].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-            
-            sampleSmallItems[2].topAnchor.constraint(equalTo: self.sampleSmallItems[1].bottomAnchor),
-            sampleSmallItems[2].leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            sampleSmallItems[2].trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            sampleSmallItems[2].widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-            
-            sampleSmallItems[2].bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
+            smallItemsVC.view.bottomAnchor.constraint(equalTo: self.contentView.bottomAnchor),
         ])
     }
 }
