@@ -9,6 +9,13 @@ import UIKit
 
 class SmallItemViewController: UIViewController {
     
+    private let recentItemsHeader: ListHeaderView = {
+        let recentItemsHeader = ListHeaderView()
+        recentItemsHeader.translatesAutoresizingMaskIntoConstraints = false
+        recentItemsHeader.text = "Recent Items"
+        return recentItemsHeader
+    }()
+    
     private let sampleSmallItems: [SmallListItemView] = {
         var items: [SmallListItemView] = []
         for i in 0..<3 {
@@ -34,9 +41,15 @@ class SmallItemViewController: UIViewController {
         self.view.addSubview(sampleSmallItems[0])
         self.view.addSubview(sampleSmallItems[1])
         self.view.addSubview(sampleSmallItems[2])
+        self.view.addSubview(recentItemsHeader)
         
         NSLayoutConstraint.activate([
-            sampleSmallItems[0].topAnchor.constraint(equalTo: self.view.topAnchor),
+            recentItemsHeader.topAnchor.constraint(equalTo: self.view.topAnchor),
+            recentItemsHeader.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            recentItemsHeader.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            recentItemsHeader.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            
+            sampleSmallItems[0].topAnchor.constraint(equalTo: self.recentItemsHeader.bottomAnchor),
             sampleSmallItems[0].leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             sampleSmallItems[0].trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             

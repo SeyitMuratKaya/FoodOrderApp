@@ -73,12 +73,6 @@ class ViewController: UIViewController {
         return locationSelector
     }()
             
-    private let popularRestaurantsHeader: ListHeaderView = {
-        let popularRestaurantsHeader = ListHeaderView()
-        popularRestaurantsHeader.translatesAutoresizingMaskIntoConstraints = false
-        popularRestaurantsHeader.text = "Popular Restaurants"
-        return popularRestaurantsHeader
-    }()
     
     private let mostPopularHeader: ListHeaderView = {
         let mostPopularHeader = ListHeaderView()
@@ -86,12 +80,17 @@ class ViewController: UIViewController {
         mostPopularHeader.text = "Most Popular"
         return mostPopularHeader
     }()
+        
+    let largeItemsVC: LargeItemViewController = {
+        let largeItemsVC = LargeItemViewController()
+        largeItemsVC.view.translatesAutoresizingMaskIntoConstraints = false
+        return largeItemsVC
+    }()
     
-    private let recentItemsHeader: ListHeaderView = {
-        let recentItemsHeader = ListHeaderView()
-        recentItemsHeader.translatesAutoresizingMaskIntoConstraints = false
-        recentItemsHeader.text = "Recent Items"
-        return recentItemsHeader
+    let smallItemsVC: SmallItemViewController = {
+        let smallItemsVC = SmallItemViewController()
+        smallItemsVC.view.translatesAutoresizingMaskIntoConstraints = false
+        return smallItemsVC
     }()
     
     override func viewDidLoad() {
@@ -104,18 +103,6 @@ class ViewController: UIViewController {
         popularRestaurantsCollectionView.register(LargeItemCollectionViewCell.self, forCellWithReuseIdentifier: "largeItem")
         self.setupUI()
     }
-    
-    let largeItemsVC: LargeItemViewController = {
-        let largeItemsVC = LargeItemViewController()
-        largeItemsVC.view.translatesAutoresizingMaskIntoConstraints = false
-        return largeItemsVC
-    }()
-    
-    let smallItemsVC: SmallItemViewController = {
-        let smallItemsVC = SmallItemViewController()
-        smallItemsVC.view.translatesAutoresizingMaskIntoConstraints = false
-        return smallItemsVC
-    }()
     
     private func setupUI() {
         self.view.backgroundColor = .white
@@ -146,7 +133,6 @@ class ViewController: UIViewController {
         self.contentView.addSubview(locationSelector)
         self.contentView.addSubview(searchBar)
         self.contentView.addSubview(foodCategoryCollectionView)
-        self.contentView.addSubview(popularRestaurantsHeader)
         
         addChild(largeItemsVC)
         self.contentView.addSubview(largeItemsVC.view)
@@ -154,7 +140,6 @@ class ViewController: UIViewController {
         
         self.contentView.addSubview(mostPopularHeader)
         self.contentView.addSubview(popularRestaurantsCollectionView)
-        self.contentView.addSubview(recentItemsHeader)
         
         addChild(smallItemsVC)
         self.contentView.addSubview(smallItemsVC.view)
@@ -182,12 +167,7 @@ class ViewController: UIViewController {
             foodCategoryCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             foodCategoryCollectionView.heightAnchor.constraint(equalToConstant: 120),
             
-            popularRestaurantsHeader.topAnchor.constraint(equalTo: self.foodCategoryCollectionView.bottomAnchor),
-            popularRestaurantsHeader.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            popularRestaurantsHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            popularRestaurantsHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-
-            largeItemsVC.view.topAnchor.constraint(equalTo: self.popularRestaurantsHeader.bottomAnchor),
+            largeItemsVC.view.topAnchor.constraint(equalTo: self.foodCategoryCollectionView.bottomAnchor),
             largeItemsVC.view.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             largeItemsVC.view.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             largeItemsVC.view.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
@@ -202,12 +182,7 @@ class ViewController: UIViewController {
             popularRestaurantsCollectionView.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             popularRestaurantsCollectionView.heightAnchor.constraint(equalToConstant: 200),
             
-            recentItemsHeader.topAnchor.constraint(equalTo: self.popularRestaurantsCollectionView.bottomAnchor),
-            recentItemsHeader.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
-            recentItemsHeader.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
-            recentItemsHeader.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),
-            
-            smallItemsVC.view.topAnchor.constraint(equalTo: self.recentItemsHeader.bottomAnchor),
+            smallItemsVC.view.topAnchor.constraint(equalTo: self.popularRestaurantsCollectionView.bottomAnchor),
             smallItemsVC.view.leadingAnchor.constraint(equalTo: self.contentView.leadingAnchor),
             smallItemsVC.view.trailingAnchor.constraint(equalTo: self.contentView.trailingAnchor),
             smallItemsVC.view.widthAnchor.constraint(equalTo: self.contentView.widthAnchor),

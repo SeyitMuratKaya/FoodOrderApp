@@ -9,6 +9,13 @@ import UIKit
 
 class LargeItemViewController: UIViewController {
     
+    private let popularRestaurantsHeader: ListHeaderView = {
+        let popularRestaurantsHeader = ListHeaderView()
+        popularRestaurantsHeader.translatesAutoresizingMaskIntoConstraints = false
+        popularRestaurantsHeader.text = "Popular Restaurants"
+        return popularRestaurantsHeader
+    }()
+    
     private let sampleLargeItems: [LargeListItemView] = {
         var items: [LargeListItemView] = []
         for i in 0..<3 {
@@ -31,12 +38,19 @@ class LargeItemViewController: UIViewController {
     }
     
     private func setup() {
+        self.view .addSubview(popularRestaurantsHeader)
         self.view.addSubview(sampleLargeItems[0])
         self.view.addSubview(sampleLargeItems[1])
         self.view.addSubview(sampleLargeItems[2])
         
         NSLayoutConstraint.activate([
-            sampleLargeItems[0].topAnchor.constraint(equalTo: self.view.topAnchor),
+            
+            popularRestaurantsHeader.topAnchor.constraint(equalTo: self.view.topAnchor),
+            popularRestaurantsHeader.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            popularRestaurantsHeader.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            popularRestaurantsHeader.widthAnchor.constraint(equalTo: self.view.widthAnchor),
+            
+            sampleLargeItems[0].topAnchor.constraint(equalTo: self.popularRestaurantsHeader.bottomAnchor),
             sampleLargeItems[0].leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             sampleLargeItems[0].trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             sampleLargeItems[0].heightAnchor.constraint(equalToConstant: 300),
