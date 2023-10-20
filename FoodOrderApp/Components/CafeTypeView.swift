@@ -17,7 +17,7 @@ class CafeTypeView: UIView {
     
     public var foodType: String? {
         didSet {
-            foodTypeLable.text = foodType
+            foodTypeLabel.text = foodType
         }
     }
     
@@ -28,7 +28,7 @@ class CafeTypeView: UIView {
         return restaurantTypeLabel
     }()
     
-    public var foodTypeLable: UILabel = {
+    public var foodTypeLabel: UILabel = {
         let foodTypeLable = UILabel()
         foodTypeLable.font = UIFont.systemFont(ofSize: 12)
         foodTypeLable.textColor = UIColor(named: "PaleGray")
@@ -49,16 +49,16 @@ class CafeTypeView: UIView {
         self.addSubview(restaurantTypeLabel)
         restaurantTypeLabel.translatesAutoresizingMaskIntoConstraints = false
         
-        self.addSubview(foodTypeLable)
-        foodTypeLable.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(foodTypeLabel)
+        foodTypeLabel.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             restaurantTypeLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
             restaurantTypeLabel.topAnchor.constraint(equalTo: topAnchor),
             restaurantTypeLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
             
-            foodTypeLable.leadingAnchor.constraint(equalTo: restaurantTypeLabel.trailingAnchor, constant: 4),
-            foodTypeLable.centerYAnchor.constraint(equalTo: restaurantTypeLabel.centerYAnchor),
+            foodTypeLabel.leadingAnchor.constraint(equalTo: restaurantTypeLabel.trailingAnchor, constant: 4),
+            foodTypeLabel.centerYAnchor.constraint(equalTo: restaurantTypeLabel.centerYAnchor),
         ])
     }
     
