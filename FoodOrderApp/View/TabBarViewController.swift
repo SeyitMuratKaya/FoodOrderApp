@@ -36,11 +36,11 @@ class TabBarViewController: UITabBarController {
     }
     
     private func addTabItems() {
-        let tab1 = ViewController()
-        let tab2 = ViewController()
-        let tab3 = ViewController()
-        let tab4 = ViewController()
-        let tab5 = ViewController()
+        let tab1 = HomeViewController()
+        let tab2 = HomeViewController()
+        let tab3 = HomeViewController()
+        let tab4 = HomeViewController()
+        let tab5 = HomeViewController()
         tab1.title = "Menu"
         tab2.title = "Offers"
         tab3.title = ""
