@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		2F3813692AED46280006FB65 /* reference.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 2F3813682AED46270006FB65 /* reference.jpg */; };
+		2F38136B2AED470A0006FB65 /* Restaurant+FoodOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F38136A2AED470A0006FB65 /* Restaurant+FoodOrder.swift */; };
+		2F38136D2AED47580006FB65 /* Sample+Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F38136C2AED47580006FB65 /* Sample+Restaurant.swift */; };
 		2F54EF372AE0076E00A15D38 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EF362AE0076E00A15D38 /* TabBarViewController.swift */; };
 		2F54EF3A2AE01D2E00A15D38 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EF392AE01D2E00A15D38 /* Restaurant.swift */; };
 		2F54EF3D2AE05B9200A15D38 /* Date+FoodOrder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F54EF3C2AE05B9200A15D38 /* Date+FoodOrder.swift */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		2F3813682AED46270006FB65 /* reference.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = reference.jpg; sourceTree = "<group>"; };
+		2F38136A2AED470A0006FB65 /* Restaurant+FoodOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Restaurant+FoodOrder.swift"; sourceTree = "<group>"; };
+		2F38136C2AED47580006FB65 /* Sample+Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sample+Restaurant.swift"; sourceTree = "<group>"; };
 		2F54EF362AE0076E00A15D38 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		2F54EF392AE01D2E00A15D38 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		2F54EF3C2AE05B9200A15D38 /* Date+FoodOrder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+FoodOrder.swift"; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				2F54EF392AE01D2E00A15D38 /* Restaurant.swift */,
+				2F38136C2AED47580006FB65 /* Sample+Restaurant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -107,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				2F54EF3C2AE05B9200A15D38 /* Date+FoodOrder.swift */,
+				2F38136A2AED470A0006FB65 /* Restaurant+FoodOrder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -261,6 +267,7 @@
 				2FD3EEFA2ADDC9E10042D1C9 /* CafeTypeView.swift in Sources */,
 				2FD3EEF62ADD9F920042D1C9 /* SmallListItemView.swift in Sources */,
 				2FAFDED12AE173A00044F3A9 /* LargeItemViewController.swift in Sources */,
+				2F38136B2AED470A0006FB65 /* Restaurant+FoodOrder.swift in Sources */,
 				2FD3EEDC2ADD5F1E0042D1C9 /* AppDelegate.swift in Sources */,
 				2F54EF372AE0076E00A15D38 /* TabBarViewController.swift in Sources */,
 				2F54EF3A2AE01D2E00A15D38 /* Restaurant.swift in Sources */,
@@ -272,6 +279,7 @@
 				2FE5C6702ADEBA50004BD600 /* SmallItemCollectionViewCell.swift in Sources */,
 				2FD3EEF82ADDBD210042D1C9 /* CafeRatingView.swift in Sources */,
 				2F54EF3D2AE05B9200A15D38 /* Date+FoodOrder.swift in Sources */,
+				2F38136D2AED47580006FB65 /* Sample+Restaurant.swift in Sources */,
 				2FE5C6722ADED556004BD600 /* LargeItemCollectionViewCell.swift in Sources */,
 				2FE5C6762ADF25AD004BD600 /* LocationSelectorView.swift in Sources */,
 				2FD3EEF22ADD82BB0042D1C9 /* ListHeaderView.swift in Sources */,
